@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Player - Guess Who Live</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <section class="panel" id="joinPanel">
+    <h1>Join Game</h1>
+    <label>Your name</label>
+    <input id="playerName" placeholder="Kristin" />
+    <label>Game code</label>
+    <input id="gameCodeInput" placeholder="ABC123" />
+    <button id="joinGame">Join</button>
+    <p id="joinError" class="small"></p>
+  </section>
+
+  <section class="panel" id="gamePanel" style="display:none">
+    <h1 id="gameTitle">Guess Who Live</h1>
+    <div class="notice">
+      Click the photos in the order you think matches the answer key. Your number badge shows your chosen order.
+    </div>
+    <div class="button-row">
+      <button id="submitPicks">Submit Answers</button>
+      <button class="danger" id="clearPicks">Clear Picks</button>
+    </div>
+    <p id="result"></p>
+    <div class="grid" id="playerBoard"></div>
+  </section>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="player.js"></script>
+</body>
+</html>

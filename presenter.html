@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Presenter - Guess Who Live</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <section class="panel" id="setupPanel">
+    <h1>Presenter Setup</h1>
+    <p>Upload photos, type the matching names, then set the correct answer order. Players will click pictures in that order.</p>
+    <label>Game title</label>
+    <input id="title" value="Friday Fadeout Presents: Guess Who?" />
+    <label>Photos</label>
+    <input id="photos" type="file" accept="image/*" multiple />
+    <div id="nameFields"></div>
+    <label>Answer key order</label>
+    <p class="small">Enter photo numbers in the correct order, separated by commas. Example: 3, 1, 5, 2</p>
+    <input id="answerOrder" placeholder="1, 2, 3" />
+    <button id="createGame">Create Game</button>
+    <p id="setupError" class="small"></p>
+  </section>
+
+  <section class="panel" id="dashboard" style="display:none">
+    <h1 id="dashTitle">Guess Who Live</h1>
+    <div class="notice">
+      <strong>Game code:</strong> <span id="gameCode"></span><br />
+      Send players to <strong>/player.html</strong> and have them enter this code.
+    </div>
+    <div class="button-row">
+      <button id="startGame">Start Game</button>
+      <button class="secondary" onclick="window.print()">Print Results</button>
+    </div>
+
+    <div class="row">
+      <div>
+        <h2>Answer Key</h2>
+        <ol id="answerKey"></ol>
+      </div>
+      <div>
+        <h2>Leaderboard</h2>
+        <table class="table">
+          <thead><tr><th>Rank</th><th>Player</th><th>Score</th><th>Status</th></tr></thead>
+          <tbody id="leaderboard"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <h2>Board</h2>
+    <div class="grid" id="presenterBoard"></div>
+  </section>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="presenter.js"></script>
+</body>
+</html>
