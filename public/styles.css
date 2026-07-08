@@ -1,14 +1,10 @@
-/* PAGE */
-
 body {
 
   margin: 0;
 
   font-family: Arial, Helvetica, sans-serif;
 
-  background:
-
-    radial-gradient(circle, #ffd84d, #f5a400);
+  background: radial-gradient(circle at top, #ffe066, #f5a000 55%, #c46b00);
 
   color: #111;
 
@@ -16,19 +12,17 @@ body {
 
 }
 
-/* TITLE */
-
 h1 {
 
   margin: 0;
 
-  padding: 25px;
+  padding: 22px 10px;
 
-  background: #e21b23;
+  background: linear-gradient(#ff3131, #b80000);
 
   color: white;
 
-  font-size: 45px;
+  font-size: 46px;
 
   font-weight: 900;
 
@@ -38,19 +32,47 @@ h1 {
 
   border-bottom: 10px solid #0057b8;
 
-  text-shadow: 3px 3px #000;
+  text-shadow: 4px 4px 0 #111;
 
 }
 
-/* BOARD - 6 HIGH */
+h1::before {
+
+  content: "FRIDAY FADEOUT PRESENTS";
+
+  display: block;
+
+  font-size: 18px;
+
+  letter-spacing: 5px;
+
+  color: #ffd84d;
+
+  text-shadow: 2px 2px 0 #111;
+
+  margin-bottom: 6px;
+
+}
+
+h1::after {
+
+  content: "?";
+
+  display: inline-block;
+
+  margin-left: 12px;
+
+  color: #ffd84d;
+
+  font-size: 58px;
+
+}
 
 #board {
 
   display: grid;
 
-  grid-template-rows: repeat(6, 1fr);
-
-  grid-auto-flow: column;
+  grid-template-columns: repeat(6, 1fr);
 
   gap: 16px;
 
@@ -58,53 +80,37 @@ h1 {
 
   margin: 30px auto;
 
-  padding: 30px;
+  padding: 28px;
 
-  background: linear-gradient(
+  background: linear-gradient(145deg, #f02a2a, #b90000);
 
-    #e51b23,
+  border: 14px solid #860000;
 
-    #b90000
+  border-radius: 28px;
 
-  );
-
-  border: 14px solid #8c0000;
-
-  border-radius: 25px;
-
-  box-shadow:
-
-    0 15px 0 #650000,
-
-    0 25px 35px #333;
+  box-shadow: 0 14px 0 #5f0000, 0 28px 40px rgba(0,0,0,.45);
 
 }
-
-/* FLIP CARD */
 
 .card {
 
   width: 125px;
 
-  height: 170px;
+  height: 172px;
 
-  background: #ffffff;
+  background: white;
+
+  border: 5px solid #f2f2f2;
 
   border-radius: 8px;
 
-  border: 5px solid #eeeeee;
-
   padding: 8px;
 
-  box-shadow:
+  box-shadow: 0 10px 0 #bdbdbd;
 
-    0 10px 0 #bbbbbb;
-
-  transition: .3s;
+  transition: .25s;
 
 }
-
-/* PHOTO */
 
 .card img {
 
@@ -114,19 +120,15 @@ h1 {
 
   object-fit: cover;
 
-  border-radius: 4px;
-
   border: 4px solid #e21b23;
 
   background: #ff3b1f;
 
 }
 
-/* NAME STRIP */
-
 .card p {
 
-  margin-top: 7px;
+  margin: 7px 0 0;
 
   background: #e21b23;
 
@@ -136,31 +138,25 @@ h1 {
 
   font-size: 14px;
 
-  font-weight: bold;
+  font-weight: 900;
 
   border-radius: 3px;
 
 }
 
-/* WHEN SELECTED */
-
 .card.selected {
 
-  transform:
-
-    perspective(300px)
-
-    rotateX(75deg);
+  transform: perspective(300px) rotateX(75deg);
 
   opacity: .35;
 
-}
+  filter: grayscale(1);
 
-/* BUTTONS */
+}
 
 button {
 
-  background: #0057b8;
+  background: linear-gradient(#0074e8, #004b9b);
 
   color: white;
 
@@ -168,17 +164,17 @@ button {
 
   border-radius: 15px;
 
-  padding: 15px 30px;
+  padding: 15px 28px;
 
   font-size: 22px;
 
-  font-weight: bold;
+  font-weight: 900;
 
-  box-shadow: 0 7px #00336b;
+  box-shadow: 0 7px 0 #002d63;
+
+  margin: 10px;
 
 }
-
-/* FORMS */
 
 input {
 
@@ -190,24 +186,24 @@ input {
 
   border: 3px solid #222;
 
-}
+  margin: 8px;
 
-/* LEADERBOARD */
+}
 
 #leaderboard {
 
-  background:white;
+  background: white;
 
-  max-width:700px;
+  max-width: 760px;
 
-  margin:30px auto;
+  margin: 30px auto;
 
-  padding:25px;
+  padding: 25px;
 
-  border-radius:20px;
+  border-radius: 20px;
 
-  border:8px solid #0057b8;
+  border: 8px solid #0057b8;
 
-  font-size:22px;
+  font-size: 22px;
 
 }
