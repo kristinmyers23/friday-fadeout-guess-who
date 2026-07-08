@@ -1,74 +1,132 @@
-/* GAME BOARD */
+/* PAGE */
+
+body {
+
+  margin: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  background:
+
+    radial-gradient(circle, #ffd84d, #f5a400);
+
+  color: #111;
+
+  text-align: center;
+
+}
+
+/* TITLE */
+
+h1 {
+
+  margin: 0;
+
+  padding: 25px;
+
+  background: #e21b23;
+
+  color: white;
+
+  font-size: 45px;
+
+  font-weight: 900;
+
+  text-transform: uppercase;
+
+  letter-spacing: 3px;
+
+  border-bottom: 10px solid #0057b8;
+
+  text-shadow: 3px 3px #000;
+
+}
+
+/* BOARD - 6 HIGH */
 
 #board {
 
   display: grid;
 
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 1fr);
 
-  gap: 14px;
+  grid-auto-flow: column;
 
-  max-width: 1100px;
+  gap: 16px;
 
-  margin: 25px auto;
+  width: fit-content;
 
-  padding: 25px;
+  margin: 30px auto;
 
-  background: #d71920;
+  padding: 30px;
 
-  border: 12px solid #9b0000;
+  background: linear-gradient(
 
-  border-radius: 18px;
+    #e51b23,
 
-  box-shadow: inset 0 0 15px #600;
+    #b90000
+
+  );
+
+  border: 14px solid #8c0000;
+
+  border-radius: 25px;
+
+  box-shadow:
+
+    0 15px 0 #650000,
+
+    0 25px 35px #333;
 
 }
 
-/* GUESS WHO CARD */
+/* FLIP CARD */
 
 .card {
 
-  background: white;
+  width: 125px;
 
-  width: 140px;
+  height: 170px;
 
-  height: 180px;
+  background: #ffffff;
+
+  border-radius: 8px;
 
   border: 5px solid #eeeeee;
 
-  border-radius: 6px;
+  padding: 8px;
 
-  padding: 7px;
+  box-shadow:
 
-  box-shadow: 0 10px 0 #cccccc;
+    0 10px 0 #bbbbbb;
 
-  transition: .25s;
+  transition: .3s;
 
 }
 
-/* SQUARE CHARACTER PHOTO */
+/* PHOTO */
 
 .card img {
 
-  width: 130px;
+  width: 115px;
 
-  height: 130px;
+  height: 115px;
 
   object-fit: cover;
 
-  object-position: center;
+  border-radius: 4px;
 
   border: 4px solid #e21b23;
 
-  background: #e21b23;
+  background: #ff3b1f;
 
 }
 
-/* NAME LABEL */
+/* NAME STRIP */
 
 .card p {
 
-  margin: 5px 0 0;
+  margin-top: 7px;
 
   background: #e21b23;
 
@@ -80,14 +138,76 @@
 
   font-weight: bold;
 
+  border-radius: 3px;
+
 }
 
-/* FLIP DOWN EFFECT */
+/* WHEN SELECTED */
 
 .card.selected {
 
-  transform: rotateX(75deg);
+  transform:
 
-  opacity: .4;
+    perspective(300px)
+
+    rotateX(75deg);
+
+  opacity: .35;
+
+}
+
+/* BUTTONS */
+
+button {
+
+  background: #0057b8;
+
+  color: white;
+
+  border: 5px solid white;
+
+  border-radius: 15px;
+
+  padding: 15px 30px;
+
+  font-size: 22px;
+
+  font-weight: bold;
+
+  box-shadow: 0 7px #00336b;
+
+}
+
+/* FORMS */
+
+input {
+
+  padding: 14px;
+
+  font-size: 18px;
+
+  border-radius: 10px;
+
+  border: 3px solid #222;
+
+}
+
+/* LEADERBOARD */
+
+#leaderboard {
+
+  background:white;
+
+  max-width:700px;
+
+  margin:30px auto;
+
+  padding:25px;
+
+  border-radius:20px;
+
+  border:8px solid #0057b8;
+
+  font-size:22px;
 
 }
